@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -11,1213 +12,1362 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #2c2c2c;
-            background: #fafafa;
-            overflow-x: hidden;
-        }
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #2c2c2c;
+        background: #fafafa;
+        overflow-x: hidden;
+    }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1.5rem 5%;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-        }
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: 1.5rem 5%;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    }
 
-        nav .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    nav .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 2px;
-            font-style: italic;
+    .logo {
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2px;
+        font-style: italic;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #c9a961;
+        z-index: 1001;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #2c2c2c;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    nav a:hover {
+        color: #c9a961;
+    }
+
+    .hero {
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(201, 169, 97, 0.85), rgba(139, 115, 85, 0.85)),
+                    url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    .hero-content {
+        max-width: 900px;
+        padding: 0 2rem;
+        animation: fadeInUp 1s ease;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        line-height: 1.1;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 1.3rem 3.5rem;
+        background: white;
+        color: #8b7355;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        transition: all 0.4s ease;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        background: #2c2c2c;
+        color: white;
+    }
+
+    .story {
+        padding: 8rem 5%;
+        background: white;
+    }
+
+    .story .container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .story-header {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .story-header h2 {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .story-header .subtitle {
+        font-size: 1.3rem;
+        color: #666;
+        font-style: italic;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .story-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+        margin-bottom: 5rem;
+    }
+
+    .story-text p {
+        font-size: 1.2rem;
+        line-height: 2;
+        color: #555;
+        margin-bottom: 2rem;
+        text-align: justify;
+    }
+
+    .story-image {
+        height: 550px;
+        background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80');
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+    }
+
+    .story-timeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-top: 5rem;
+    }
+
+    .timeline-item {
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, #fafafa, #f5f5f5);
+        border-radius: 15px;
+        transition: all 0.4s ease;
+    }
+
+    .timeline-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .timeline-year {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #c9a961;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: #2c2c2c;
+    }
+
+    .timeline-item p {
+        color: #666;
+        line-height: 1.7;
+    }
+
+    .engagements {
+        padding: 8rem 5%;
+        background: linear-gradient(135deg, #f8f4ef, #fafafa);
+    }
+
+    .engagements h2 {
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .engagements .subtitle {
+        text-align: center;
+        font-size: 1.3rem;
+        color: #666;
+        margin-bottom: 5rem;
+        font-style: italic;
+    }
+
+    .engagements-grid {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+    }
+
+    .engagement-card {
+        background: white;
+        padding: 3rem 2.5rem;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: all 0.4s ease;
+        border: 3px solid transparent;
+    }
+
+    .engagement-card:hover {
+        transform: translateY(-15px);
+        border-color: #c9a961;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .engagement-icon {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .engagement-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        color: #2c2c2c;
+    }
+
+    .engagement-card p {
+        color: #666;
+        line-height: 1.9;
+        font-size: 1.05rem;
+    }
+
+    .brands {
+        padding: 6rem 5%;
+        background: white;
+    }
+
+    .brands h2 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .brands .subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 4rem;
+        font-style: italic;
+    }
+
+    .brands-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+
+    .brand-item {
+        background: #fafafa;
+        padding: 2.5rem;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+        min-height: 120px;
+        border: 2px solid transparent;
+    }
+
+    .brand-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        border-color: #c9a961;
+        background: white;
+    }
+
+    .brand-item h3 {
+        font-size: 1.5rem;
+        color: #2c2c2c;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .prestations {
+        padding: 8rem 5%;
+        background: linear-gradient(to bottom, #fafafa, #f5f5f5);
+    }
+
+    .prestations h2 {
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .prestations-showcase {
+        max-width: 1400px;
+        margin: 0 auto 6rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .prestation-image {
+        height: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        transition: all 0.4s ease;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .prestation-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    }
+
+    .prestation-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8));
+    }
+
+    .prestation-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2.5rem;
+        color: white;
+        z-index: 1;
+    }
+
+    .prestation-overlay h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .prestation-overlay p {
+        font-size: 1rem;
+        opacity: 0.95;
+    }
+
+    .prestation-image:nth-child(1) {
+        background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80');
+    }
+
+    .prestation-image:nth-child(2) {
+        background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80');
+    }
+
+    .prestation-image:nth-child(3) {
+        background-image: url('https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80');
+    }
+
+    .prestation-image:nth-child(4) {
+        background-image: url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80');
+    }
+
+    .prestation-image:nth-child(5) {
+        background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80');
+    }
+
+    .prestation-image:nth-child(6) {
+        background-image: url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80');
+    }
+
+    .prestations-list {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .prestation-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        transition: all 0.4s ease;
+        border-left: 4px solid #c9a961;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .prestation-card:hover {
+        transform: translateX(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .prestation-card-icon {
+        font-size: 3rem;
+        flex-shrink: 0;
+    }
+
+    .prestation-card-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: #2c2c2c;
+    }
+
+    .prestation-card-content p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .prestation-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #c9a961;
+    }
+
+    .why-us {
+        padding: 8rem 5%;
+        background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+        color: white;
+    }
+
+    .why-us .container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .why-us h2 {
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+        background: linear-gradient(135deg, #c9a961, #f5d7a1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .why-us .intro {
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 5rem;
+        color: #ccc;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.9;
+    }
+
+    .why-us-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+    }
+
+    .why-us-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 3rem 2.5rem;
+        border-radius: 20px;
+        text-align: center;
+        border: 2px solid rgba(201, 169, 97, 0.3);
+        transition: all 0.4s ease;
+    }
+
+    .why-us-card:hover {
+        transform: translateY(-15px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #c9a961;
+        box-shadow: 0 20px 60px rgba(201, 169, 97, 0.2);
+    }
+
+    .why-us-icon {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .why-us-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        color: #c9a961;
+    }
+
+    .why-us-card p {
+        color: #ccc;
+        line-height: 1.9;
+        font-size: 1.05rem;
+    }
+
+    .testimonials {
+        padding: 8rem 5%;
+        background: white;
+    }
+
+    .testimonials h2 {
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .testimonials .subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 5rem;
+    }
+
+    .testimonials-grid {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+    }
+
+    .testimonial-card {
+        background: linear-gradient(135deg, #fafafa, #f5f5f5);
+        padding: 3rem;
+        border-radius: 20px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .testimonial-quote {
+        font-size: 4rem;
+        color: #c9a961;
+        opacity: 0.3;
+        position: absolute;
+        top: 20px;
+        left: 30px;
+    }
+
+    .testimonial-content {
+        margin-top: 3rem;
+    }
+
+    .testimonial-text {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        color: #555;
+        margin-bottom: 2rem;
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 700;
+    }
+
+    .testimonial-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+        color: #2c2c2c;
+    }
+
+    .testimonial-stars {
+        color: #c9a961;
+        font-size: 1.1rem;
+    }
+
+    .gallery {
+        padding: 8rem 5%;
+        background: linear-gradient(to bottom, #fafafa, #f0f0f0);
+    }
+
+    .gallery h2 {
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #c9a961, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+
+    .gallery .subtitle {
+        text-align: center;
+        font-size: 1.3rem;
+        color: #666;
+        margin-bottom: 5rem;
+        font-style: italic;
+    }
+
+    .gallery-grid {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .gallery-item {
+        height: 350px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .gallery-item:hover::before {
+        opacity: 1;
+    }
+
+    .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        color: white;
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+        z-index: 1;
+    }
+
+    .gallery-item:hover .gallery-caption {
+        transform: translateY(0);
+    }
+
+    .gallery-caption h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .gallery-item:nth-child(1) {
+        background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80');
+    }
+
+    .gallery-item:nth-child(2) {
+        background-image: url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=800&q=80');
+    }
+
+    .gallery-item:nth-child(3) {
+        background-image: url('https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80');
+    }
+
+    .gallery-item:nth-child(4) {
+        background-image: url('https://images.unsplash.com/photo-1595475884562-073c39d3e7c8?w=800&q=80');
+    }
+
+    .gallery-item:nth-child(5) {
+        background-image: url('https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=800&q=80');
+    }
+
+    .gallery-item:nth-child(6) {
+        background-image: url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80');
+    }
+
+    .gallery-item:nth-child(7) {
+        background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80');
+    }
+
+    .gallery-item:nth-child(8) {
+        background-image: url('https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=800&q=80');
+    }
+
+    .contact {
+        padding: 8rem 5%;
+        background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+        color: white;
+    }
+
+    .contact .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    .contact h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #c9a961, #f5d7a1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .contact-item-icon {
+        font-size: 2rem;
+        color: #c9a961;
+    }
+
+    .contact-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-item p {
+        color: #ccc;
+        line-height: 1.8;
+    }
+
+    .planity-container {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .planity-container h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #c9a961;
+        text-align: center;
+    }
+
+    .planity-iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+        border-radius: 10px;
+        background: #f5f5f5;
+    }
+
+    .planity-note {
+        color: #666;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .planity-note a {
+        color: #c9a961;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    footer {
+        background: #1a1a1a;
+        padding: 3rem 5%;
+        text-align: center;
+        color: #999;
+    }
+
+    footer p {
+        font-size: 0.95rem;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .prestations-list {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mobile-menu-toggle {
+            display: block;
         }
 
         nav ul {
-            display: flex;
-            list-style: none;
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: white;
+            flex-direction: column;
+            padding: 3rem 2rem;
             gap: 2rem;
+            transition: left 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+
+        nav ul.active {
+            left: 0;
         }
 
         nav a {
-            text-decoration: none;
-            color: #2c2c2c;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: #c9a961;
-        }
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.85), rgba(139, 115, 85, 0.85)),
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            padding: 0 2rem;
-            animation: fadeInUp 1s ease;
+            font-size: 1.3rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .hero h1 {
-            font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            line-height: 1.1;
-            letter-spacing: 2px;
+            font-size: 2.8rem;
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.3rem 3.5rem;
-            background: white;
-            color: #8b7355;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
             font-size: 1.2rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-            background: #2c2c2c;
-            color: white;
+        .story-content,
+        .contact .container {
+            grid-template-columns: 1fr;
         }
 
-        .story {
-            padding: 8rem 5%;
-            background: white;
-        }
-
-        .story .container {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .story-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .story-header h2 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .story-header .subtitle {
-            font-size: 1.3rem;
-            color: #666;
-            font-style: italic;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .story-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-            margin-bottom: 5rem;
-        }
-
-        .story-text p {
-            font-size: 1.2rem;
-            line-height: 2;
-            color: #555;
-            margin-bottom: 2rem;
-            text-align: justify;
-        }
-
-        .story-image {
-            height: 550px;
-            background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
-        }
-
-        .story-timeline {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 5rem;
-        }
-
-        .timeline-item {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #fafafa, #f5f5f5);
-            border-radius: 15px;
-            transition: all 0.4s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .timeline-year {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #c9a961;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #2c2c2c;
-        }
-
-        .timeline-item p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        .engagements {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, #f8f4ef, #fafafa);
-        }
-
-        .engagements h2 {
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .engagements .subtitle {
-            text-align: center;
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 5rem;
-            font-style: italic;
-        }
-
-        .engagements-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }
-
-        .engagement-card {
-            background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border: 3px solid transparent;
-        }
-
-        .engagement-card:hover {
-            transform: translateY(-15px);
-            border-color: #c9a961;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .engagement-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-        }
-
-        .engagement-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            color: #2c2c2c;
-        }
-
-        .engagement-card p {
-            color: #666;
-            line-height: 1.9;
-            font-size: 1.05rem;
-        }
-
-        .brands {
-            padding: 6rem 5%;
-            background: white;
-        }
-
-        .brands h2 {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .brands .subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 4rem;
-            font-style: italic;
-        }
-
-        .brands-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-        }
-
-        .brand-item {
-            background: #fafafa;
-            padding: 2.5rem;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-            min-height: 120px;
-            border: 2px solid transparent;
-        }
-
-        .brand-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border-color: #c9a961;
-            background: white;
-        }
-
-        .brand-item h3 {
-            font-size: 1.5rem;
-            color: #2c2c2c;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .prestations {
-            padding: 8rem 5%;
-            background: linear-gradient(to bottom, #fafafa, #f5f5f5);
-        }
-
-        .prestations h2 {
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 5rem;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
+        .story-timeline,
+        .engagements-grid,
+        .why-us-grid,
+        .testimonials-grid {
+            grid-template-columns: 1fr;
         }
 
         .prestations-showcase {
-            max-width: 1400px;
-            margin: 0 auto 6rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .prestation-image {
-            height: 400px;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            transition: all 0.4s ease;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .prestation-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-        }
-
-        .prestation-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8));
-        }
-
-        .prestation-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2.5rem;
-            color: white;
-            z-index: 1;
-        }
-
-        .prestation-overlay h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .prestation-overlay p {
-            font-size: 1rem;
-            opacity: 0.95;
-        }
-
-        .prestation-image:nth-child(1) {
-            background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80');
-        }
-
-        .prestation-image:nth-child(2) {
-            background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80');
-        }
-
-        .prestation-image:nth-child(3) {
-            background-image: url('https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80');
-        }
-
-        .prestation-image:nth-child(4) {
-            background-image: url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80');
-        }
-
-        .prestation-image:nth-child(5) {
-            background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80');
-        }
-
-        .prestation-image:nth-child(6) {
-            background-image: url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80');
-        }
-
-        .prestations-list {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
+            grid-template-columns: 1fr;
         }
 
         .prestation-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-            transition: all 0.4s ease;
-            border-left: 4px solid #c9a961;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .prestation-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .prestation-card-icon {
-            font-size: 3rem;
-            flex-shrink: 0;
-        }
-
-        .prestation-card-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: #2c2c2c;
-        }
-
-        .prestation-card-content p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .prestation-price {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #c9a961;
-        }
-
-        .planity {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            color: white;
+            flex-direction: column;
             text-align: center;
         }
 
-        .planity h2 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            font-weight: 800;
-        }
-
-        .planity p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .planity-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
-        }
-
-        .planity-iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 10px;
-        }
-
-        .planity-note {
-            color: #666;
-            margin-top: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .planity-note a {
-            color: #c9a961;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .why-us {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-            color: white;
-        }
-
-        .why-us .container {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .why-us h2 {
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, #c9a961, #f5d7a1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .why-us .intro {
-            text-align: center;
-            font-size: 1.4rem;
-            margin-bottom: 5rem;
-            color: #ccc;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.9;
-        }
-
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }
-
-        .why-us-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 2px solid rgba(201, 169, 97, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .why-us-card:hover {
-            transform: translateY(-15px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #c9a961;
-            box-shadow: 0 20px 60px rgba(201, 169, 97, 0.2);
-        }
-
-        .why-us-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-        }
-
-        .why-us-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            color: #c9a961;
-        }
-
-        .why-us-card p {
-            color: #ccc;
-            line-height: 1.9;
-            font-size: 1.05rem;
-        }
-
-        .testimonials {
-            padding: 8rem 5%;
-            background: white;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .testimonials .subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 5rem;
-        }
-
-        .testimonials-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }
-
-        .testimonial-card {
-            background: linear-gradient(135deg, #fafafa, #f5f5f5);
-            padding: 3rem;
-            border-radius: 20px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        .testimonial-quote {
-            font-size: 4rem;
-            color: #c9a961;
-            opacity: 0.3;
-            position: absolute;
-            top: 20px;
-            left: 30px;
-        }
-
-        .testimonial-content {
-            margin-top: 3rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: #555;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .logo {
             font-size: 1.5rem;
-            color: white;
-            font-weight: 700;
         }
+    }
+</style>
+```
 
-        .testimonial-info h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-            color: #2c2c2c;
-        }
-
-        .testimonial-stars {
-            color: #c9a961;
-            font-size: 1.1rem;
-        }
-
-        .gallery {
-            padding: 8rem 5%;
-            background: linear-gradient(to bottom, #fafafa, #f0f0f0);
-        }
-
-        .gallery h2 {
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .gallery .subtitle {
-            text-align: center;
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 5rem;
-            font-style: italic;
-        }
-
-        .gallery-grid {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            height: 350px;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-            z-index: 1;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
-
-        .gallery-caption h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery-item:nth-child(1) {
-            background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80');
-        }
-
-        .gallery-item:nth-child(2) {
-            background-image: url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=800&q=80');
-        }
-
-        .gallery-item:nth-child(3) {
-            background-image: url('https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80');
-        }
-
-        .gallery-item:nth-child(4) {
-            background-image: url('https://images.unsplash.com/photo-1595475884562-073c39d3e7c8?w=800&q=80');
-        }
-
-        .gallery-item:nth-child(5) {
-            background-image: url('https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=800&q=80');
-        }
-
-        .gallery-item:nth-child(6) {
-            background-image: url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80');
-        }
-
-        .gallery-item:nth-child(7) {
-            background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80');
-        }
-
-        .gallery-item:nth-child(8) {
-            background-image: url('https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=800&q=80');
-        }
-
-        .contact {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-            color: white;
-        }
-
-        .contact .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-        }
-
-        .contact h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #c9a961, #f5d7a1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-
-        .contact-item-icon {
-            font-size: 2rem;
-            color: #c9a961;
-        }
-
-        .contact-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item p {
-            color: #ccc;
-            line-height: 1.8;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem;
-            border: 2px solid rgba(201, 169, 97, 0.3);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #c9a961;
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-button {
-            padding: 1.2rem;
-            background: linear-gradient(135deg, #c9a961, #8b7355);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
-        }
-
-        footer {
-            background: #1a1a1a;
-            padding: 3rem 5%;
-            text-align: center;
-            color: #999;
-        }
-
-        footer p {
-            font-size: 0.95rem;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-
-            .story-content,
-            .contact .container {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .prestations-showcase,
-            .prestations-list,
-            .engagements-grid,
-            .why-us-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .brands-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .story-timeline {
-                grid-template-columns: 1fr;
-            }
-
-            .prestation-card {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
 </head>
 <body>
     <nav>
         <div class="container">
             <div class="logo">L'Instant Lumière</div>
-            <ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul id="navMenu">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#histoire">Histoire</a></li>
                 <li><a href="#engagements">Engagements</a></li>
                 <li><a href="#prestations">Prestations</a></li>
-                <li><a href="#reservation">Réservation</a></li>
                 <li><a href="#avis">Avis</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Réservation</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero" id="accueil">
-        <div class="hero-content">
-            <h1>L'Instant Lumière</h1>
-            <p>Où la beauté naturelle rencontre l'excellence artisanale depuis 2015</p>
-            <a href="#reservation" class="cta-button">Réserver Maintenant</a>
-        </div>
-    </section>
+```
+<section class="hero" id="accueil">
+    <div class="hero-content">
+        <h1>L'Instant Lumière</h1>
+        <p>Où la beauté naturelle rencontre l'excellence artisanale depuis 2015</p>
+        <a href="#contact" class="cta-button">Réserver Maintenant</a>
+    </div>
+</section>
 
-    <section class="story" id="histoire">
-        <div class="container">
-            <div class="story-header">
-                <h2>Notre Histoire</h2>
-                <p class="subtitle">"Chaque mèche raconte une histoire, chaque coupe révèle une personnalité"</p>
-            </div>
-
-            <div class="story-content">
-                <div class="story-text">
-                    <p>Tout a commencé un matin d'octobre 2015. Sophie Renard, fille de vignerons beaunois, rentrait de Paris après 12 années passées dans les plus prestigieux salons de la capitale. Elle rêvait d'autre chose : créer un lieu où l'excellence parisienne rencontrerait l'authenticité bourguignonne.</p>
-                    <p>En franchissant le seuil d'une ancienne maison de maître rue Carnot, elle a su. Les voûtes centenaires, la lumière dorée qui traverse les hautes fenêtres... C'était ici que naîtrait L'Instant Lumière. Un nom qui résonne comme une promesse : capturer ces instants magiques où vous vous redécouvrez dans le miroir, plus radieux que jamais.</p>
-                    <p>Aujourd'hui, notre équipe de huit artistes coiffeurs partage cette même philosophie. Formés aux techniques les plus pointues, nous croyons que la vraie beauté est celle qui respecte la nature, l'environnement et l'authenticité de chaque personne. Ici, pas de formatage. Uniquement des créations sur mesure qui magnifient qui vous êtes vraiment.</p>
-                </div>
-                <div class="story-image"></div>
-            </div>
-
-            <div class="story-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2015</div>
-                    <h3>Les Débuts</h3>
-                    <p>Ouverture de L'Instant Lumière avec une équipe de 3 passionnés et une vision claire : l'excellence accessible à tous</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <h3>Engagement Vert</h3>
-                    <p>Transition complète vers les produits végans et naturels. Certification salon éco-responsable</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <h3>Aujourd'hui</h3>
-                    <p>8 artistes coiffeurs, 3000+ clients satisfaits, et toujours la même passion intacte</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="engagements" id="engagements">
-        <h2>Nos Engagements</h2>
-        <p class="subtitle">Parce que la beauté ne doit jamais se faire au détriment de la planète</p>
-        <div class="engagements-grid">
-            <div class="engagement-card">
-                <div class="engagement-icon">🌱</div>
-                <h3>Produits Végans</h3>
-                <p>100% de nos colorations et soins sont végans, sans cruauté animale. Nous travaillons exclusivement avec des marques engagées qui partagent nos valeurs d'éthique et de respect du vivant.</p>
-            </div>
-            <div class="engagement-card">
-                <div class="engagement-icon">🍃</div>
-                <h3>Ingrédients Naturels</h3>
-                <p>Nos produits contiennent jusqu'à 98% d'ingrédients d'origine naturelle. Huiles précieuses, extraits botaniques, actifs végétaux : nous choisissons le meilleur que la nature offre pour sublimer vos cheveux.</p>
-            </div>
-            <div class="engagement-card">
-                <div class="engagement-icon">♻️</div>
-                <h3>Démarche Responsable</h3>
-                <p>Recyclage des cheveux coupés, emballages biodégradables, économie d'eau et d'énergie. Chaque geste compte pour réduire notre empreinte écologique et préserver l'environnement.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="brands">
-        <h2>Nos Marques Partenaires</h2>
-        <p class="subtitle">Nous sélectionnons les meilleures marques pour des résultats exceptionnels</p>
-        <div class="brands-grid">
-            <div class="brand-item">
-                <h3>Kérastase</h3>
-            </div>
-            <div class="brand-item">
-                <h3>Olaplex</h3>
-            </div>
-            <div class="brand-item">
-                <h3>Davines</h3>
-            </div>
-            <div class="brand-item">
-                <h3>Shu Uemura</h3>
-            </div>
-            <div class="brand-item">
-                <h3>Redken</h3>
-            </div>
-            <div class="brand-item">
-                <h3>Moroccanoil</h3>
-            </div>
-            <div class="brand-item">
-                <h3>L'Oréal Pro</h3>
-            </div>
-            <div class="brand-item">
-                <h3>Wella Pro</h3>
-            </div>
-        </div>
-    </section>
-
-    <section class="prestations" id="prestations">
-        <h2>Nos Prestations</h2>
-        
-        <div class="prestations-showcase">
-            <div class="prestation-image">
-                <div class="prestation-overlay">
-                    <h3>Coupes Femme</h3>
-                    <p>Du classique revisité aux créations audacieuses</p>
-                </div>
-            </div>
-            <div class="prestation-image">
-                <div class="prestation-overlay">
-                    <h3>Colorations</h3>
-                    <p>Balayages naturels et couleurs éclatantes</p>
-                </div>
-            </div>
-            <div class="prestation-image">
-                <div class="prestation-overlay">
-                    <h3>Coiffures Mariée</h3>
-                    <p>Créations d'exception pour le plus beau jour</p>
-                </div>
-            </div>
-            <div class="prestation-image">
-                <div class="prestation-overlay">
-                    <h3>Soins Profonds</h3>
-                    <p>Rituels nourrissants aux actifs naturels</p>
-                </div>
-            </div>
-            <div class="prestation-image">
-                <div class="prestation-overlay">
-                    <h3>Coupes Homme</h3>
-                    <p>Style moderne et entretien impeccable</p>
-                </div>
-            </div>
-            <div class="prestation-image">
-                <div class="prestation-overlay">
-                    <h3>Mèches & Balayage</h3>
-                    <p>Effets soleil sur mesure</p>
-                </div>
-            </div>
+<section class="story" id="histoire">
+    <div class="container">
+        <div class="story-header">
+            <h2>Notre Histoire</h2>
+            <p class="subtitle">"Chaque mèche raconte une histoire, chaque coupe révèle une personnalité"</p>
         </div>
 
-        <div class="prestations-list">
-            <div class="prestation-card">
-                <div class="prestation-card-icon">✂️</div>
-                <div class="prestation-card-content">
-                    <h3>Coupe Femme Excellence</h3>
-                    <p>Consultation approfondie de vos attentes, shampooing aux huiles essentielles, coupe technique sur mesure, coiffage et conseils personnalisés pour entretenir votre coupe au quotidien.</p>
-                    <div class="prestation-price">À partir de 48€</div>
-                </div>
+        <div class="story-content">
+            <div class="story-text">
+                <p>Tout a commencé un matin d'octobre 2015. Sophie Renard, fille de vignerons beaunois, rentrait de Paris après 12 années passées dans les plus prestigieux salons de la capitale. Elle rêvait d'autre chose : créer un lieu où l'excellence parisienne rencontrerait l'authenticité bourguignonne.</p>
+                <p>En franchissant le seuil d'une ancienne maison de maître rue Carnot, elle a su. Les voûtes centenaires, la lumière dorée qui traverse les hautes fenêtres... C'était ici que naîtrait L'Instant Lumière. Un nom qui résonne comme une promesse : capturer ces instants magiques où vous vous redécouvrez dans le miroir, plus radieux que jamais.</p>
+                <p>Aujourd'hui, notre équipe de huit artistes coiffeurs partage cette même philosophie. Formés aux techniques les plus pointues, nous croyons que la vraie beauté est celle qui respecte la nature, l'environnement et l'authenticité de chaque personne. Ici, pas de formatage. Uniquement des créations sur mesure qui magnifient qui vous êtes vraiment.</p>
             </div>
-            <div class="prestation-card">
-                <div class="prestation-card-icon">🎨</div>
-                <div class="prestation-card-content">
-                    <h3>Coloration Végétale Complète</h3>
-                    <p>Diagnostic capillaire, application de coloration 100% végane, temps de pose avec massage crânien relaxant, shampooing doux, soin réparateur et brushing.</p>
-                    <div class="prestation-price">À partir de 85€</div>
-                </div>
+            <div class="story-image"></div>
+        </div>
+
+        <div class="story-timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <h3>Les Débuts</h3>
+                <p>Ouverture de L'Instant Lumière avec une équipe de 3 passionnés et une vision claire : l'excellence accessible à tous</p>
             </div>
-            <div class="prestation-card">
-                <div class="prestation-card-icon">✨</div>
-                <div class="prestation-card-content">
-                    <h3>Balayage Naturel</h3>
-                    <p>Technique artisanale pour des reflets ultra-naturels inspirés par la lumière bourguignonne. Inclut coloration, soin protecteur, coupe et coiffage professionnel.</p>
-                    <div class="prestation-price">À partir de 110€</div>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <h3>Engagement Vert</h3>
+                <p>Transition complète vers les produits végans et naturels. Certification salon éco-responsable</p>
             </div>
-            <div class="prestation-card">
-                <div class="prestation-card-icon">💆</div>
-                <div class="prestation-card-content">
-                    <h3>Soin Restructurant Profond</h3>
-                    <p>Traitement intensif aux protéines de soie et huiles précieuses. Massage du cuir chevelu, application du masque sous chaleur, rinçage doux et séchage respectueux.</p>
-                    <div class="prestation-price">À partir de 38€</div>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <h3>Aujourd'hui</h3>
+                <p>8 artistes coiffeurs, 3000+ clients satisfaits, et toujours la même passion intacte</p>
             </div>
-            <div class="prestation-card">
-                <div class="prestation-card-icon">👰</div>
-                <div class="prestation-card-content">
-                    <h3>Coiffure Événementielle</h3>
-                    <p>Pour mariage, gala ou soirée d'exception. Comprend un essai à domicile ou au salon, création sur mesure le jour J, fixation longue durée et retouches incluses.</p>
-                    <div class="prestation-price">À partir de 135€</div>
-                </div>
+        </div>
+    </div>
+</section>
+
+<section class="engagements" id="engagements">
+    <h2>Nos Engagements</h2>
+    <p class="subtitle">Parce que la beauté ne doit jamais se faire au détriment de la planète</p>
+    <div class="engagements-grid">
+        <div class="engagement-card">
+            <div class="engagement-icon">🌱</div>
+            <h3>Produits Végans</h3>
+            <p>100% de nos colorations et soins sont végans, sans cruauté animale. Nous travaillons exclusivement avec des marques engagées qui partagent nos valeurs d'éthique et de respect du vivant.</p>
+        </div>
+        <div class="engagement-card">
+            <div class="engagement-icon">🍃</div>
+            <h3>Ingrédients Naturels</h3>
+            <p>Nos produits contiennent jusqu'à 98% d'ingrédients d'origine naturelle. Huiles précieuses, extraits botaniques, actifs végétaux : nous choisissons le meilleur que la nature offre pour sublimer vos cheveux.</p>
+        </div>
+        <div class="engagement-card">
+            <div class="engagement-icon">♻️</div>
+            <h3>Démarche Responsable</h3>
+            <p>Recyclage des cheveux coupés, emballages biodégradables, économie d'eau et d'énergie. Chaque geste compte pour réduire notre empreinte écologique et préserver l'environnement.</p>
+        </div>
+    </div>
+</section>
+
+<section class="brands">
+    <h2>Nos Marques Partenaires</h2>
+    <p class="subtitle">Nous sélectionnons les meilleures marques pour des résultats exceptionnels</p>
+    <div class="brands-grid">
+        <div class="brand-item">
+            <h3>Kérastase</h3>
+        </div>
+        <div class="brand-item">
+            <h3>Olaplex</h3>
+        </div>
+        <div class="brand-item">
+            <h3>Davines</h3>
+        </div>
+        <div class="brand-item">
+            <h3>Shu Uemura</h3>
+        </div>
+        <div class="brand-item">
+            <h3>Redken</h3>
+        </div>
+        <div class="brand-item">
+            <h3>Moroccanoil</h3>
+        </div>
+        <div class="brand-item">
+            <h3>L'Oréal Pro</h3>
+        </div>
+        <div class="brand-item">
+            <h3>Wella Pro</h3>
+        </div>
+    </div>
+</section>
+
+<section class="prestations" id="prestations">
+    <h2>Nos Prestations</h2>
+    
+    <div class="prestations-showcase">
+        <div class="prestation-image">
+            <div class="prestation-overlay">
+                <h3>Coupes Femme</h3>
+                <p>Du classique revisité aux créations audacieuses</p>
             </div>
-            <div class="prestation-card">
-                <div class="prestation-card-icon">👨</div>
-                <div class="prestation-card-content">
-                    <h3>Coupe Homme Premium</h3>
-                    <p>Shampooing revitalisant, coupe précise adaptée à votre morphologie, taille et soin de la barbe, finitions impeccables et conseils styling.</p>
-                    <div class="prestation-price">À partir de 35€</div>
+        </div>
+        <div class="prestation-image">
+            <div class="prestation-overlay">
+                <h3>Colorations</h3>
+                <p>Balayages naturels et couleurs éclatantes</p>
+            </div>
+        </div>
+        <div class="prestation-image">
+            <div class="prestation-overlay">
+                <h3>Coiffures Mariée</h3>
+                <p>Créations d'exception pour le plus beau jour</p>
+            </div>
+        </div>
+        <div class="prestation-image">
+            <div class="prestation-overlay">
+                <h3>Soins Profonds</h3>
+                <p>Rituels nourrissants aux actifs naturels</p>
+            </div>
+        </div>
+        <div class="prestation-image">
+            <div class="prestation-overlay">
+                <h3>Coupes Homme</h3>
+                <p>Style moderne et entretien impeccable</p>
+            </div>
+        </div>
+        <div class="prestation-image">
+            <div class="prestation-overlay">
+                <h3>Mèches & Balayage</h3>
+                <p>Effets soleil sur mesure</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="prestations-list">
+        <div class="prestation-card">
+            <div class="prestation-card-icon">✂️</div>
+            <div class="prestation-card-content">
+                <h3>Coupe Femme Excellence</h3>
+                <p>Consultation approfondie de vos attentes, shampooing aux huiles essentielles, coupe technique sur mesure, coiffage et conseils personnalisés pour entretenir votre coupe au quotidien.</p>
+                <div class="prestation-price">À partir de 48€</div>
+            </div>
+        </div>
+        <div class="prestation-card">
+            <div class="prestation-card-icon">🎨</div>
+            <div class="prestation-card-content">
+                <h3>Coloration Végétale Complète</h3>
+                <p>Diagnostic capillaire, application de coloration 100% végane, temps de pose avec massage crânien relaxant, shampooing doux, soin réparateur et brushing.</p>
+                <div class="prestation-price">À partir de 85€</div>
+            </div>
+        </div>
+        <div class="prestation-card">
+            <div class="prestation-card-icon">✨</div>
+            <div class="prestation-card-content">
+                <h3>Balayage Naturel</h3>
+                <p>Technique artisanale pour des reflets ultra-naturels inspirés par la lumière bourguignonne. Inclut coloration, soin protecteur, coupe et coiffage professionnel.</p>
+                <div class="prestation-price">À partir de 110€</div>
+            </div>
+        </div>
+        <div class="prestation-card">
+            <div class="prestation-card-icon">💆</div>
+            <div class="prestation-card-content">
+                <h3>Soin Restructurant Profond</h3>
+                <p>Traitement intensif aux protéines de soie et huiles précieuses. Massage du cuir chevelu, application du masque sous chaleur, rinçage doux et séchage respectueux.</p>
+                <div class="prestation-price">À partir de 38€</div>
+            </div>
+        </div>
+        <div class="prestation-card">
+            <div class="prestation-card-icon">👰</div>
+            <div class="prestation-card-content">
+                <h3>Coiffure Événementielle</h3>
+                <p>Pour mariage, gala ou soirée d'exception. Comprend un essai à domicile ou au salon, création sur mesure le jour J, fixation longue durée et retouches incluses.</p>
+                <div class="prestation-price">À partir de 135€</div>
+            </div>
+        </div>
+        <div class="prestation-card">
+            <div class="prestation-card-icon">👨</div>
+            <div class="prestation-card-content">
+                <h3>Coupe Homme Premium</h3>
+                <p>Shampooing revitalisant, coupe précise adaptée à votre morphologie, taille et soin de la barbe, finitions impeccables et conseils styling.</p>
+                <div class="prestation-price">À partir de 35€</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why-us">
+    <div class="container">
+        <h2>Pourquoi Nous Choisir ?</h2>
+        <p class="intro">Nous vous proposons des coupes parfaitement maîtrisées, modernes et qui vous ressemblent. Mais au-delà de la technique, c'est toute une expérience que nous créons pour vous.</p>
+        <div class="why-us-grid">
+            <div class="why-us-card">
+                <div class="why-us-icon">🤗</div>
+                <h3>Accueil Chaleureux</h3>
+                <p>Dès que vous franchissez notre porte, vous entrez dans un univers où vous êtes unique. Café, thé, sourires sincères : nous prenons le temps de vous écouter et de comprendre vos envies avant même de toucher vos cheveux.</p>
+            </div>
+            <div class="why-us-card">
+                <div class="why-us-icon">🎓</div>
+                <h3>Équipe Qualifiée</h3>
+                <p>Nos huit coiffeurs cumulent plus de 70 ans d'expérience. Formés aux dernières techniques parisiennes et internationales, en formation continue permanente, ils maîtrisent tous les types de cheveux et toutes les textures.</p>
+            </div>
+            <div class="why-us-card">
+                <div class="why-us-icon">💡</div>
+                <h3>Conseils Avisés</h3>
+                <p>Nous ne suivons pas aveuglément les tendances. Nous analysons votre visage, votre style de vie, l'entretien que vous pouvez y consacrer. Le résultat ? Une coupe qui vous va vraiment, que vous saurez reproduire chez vous.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="avis">
+    <h2>Ils Nous Font Confiance</h2>
+    <p class="subtitle">Plus de 3000 clients satisfaits en 10 ans d'existence</p>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">J'ai enfin trouvé LE salon qui comprend mes cheveux bouclés ! Sophie a transformé ma masse informe en boucles définies et magnifiques. Je ne me suis jamais sentie aussi belle. Et en plus, tout est naturel !</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">CM</div>
+                    <div class="testimonial-info">
+                        <h4>Camille Moreau</h4>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">Après 15 ans à chercher le bon coiffeur, je peux dire que c'est ici. L'ambiance est exceptionnelle, l'équipe à l'écoute, et le résultat toujours impeccable. Mon balayage a 4 mois et il est toujours parfait !</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AD</div>
+                    <div class="testimonial-info">
+                        <h4>Amélie Dubois</h4>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">Pour mon mariage, Julie a créé une coiffure de rêve qui a tenu toute la journée et toute la soirée. Élégante, romantique, exactement ce que je voulais. Tous mes invités m'ont demandé l'adresse du salon !</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">LC</div>
+                    <div class="testimonial-info">
+                        <h4>Laura Chevalier</h4>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">En tant qu'homme, j'étais sceptique sur les salons "haut de gamme". Quelle erreur ! Vincent m'a fait une coupe moderne qui change tout. Je reçois des compliments tous les jours. Le rapport qualité-prix est imbattable.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">TB</div>
+                    <div class="testimonial-info">
+                        <h4>Thomas Bernard</h4>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">Mes cheveux étaient complètement abîmés par des colorations chimiques. En 6 mois avec leurs soins naturels et leur accompagnement, j'ai retrouvé des cheveux sains et brillants. Je ne peux plus m'en passer !</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MR</div>
+                    <div class="testimonial-info">
+                        <h4>Marie Roussel</h4>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">L'accueil est toujours chaleureux, l'ambiance détendue mais professionnelle. C'est devenu mon moment à moi, un rendez-vous que j'attends avec impatience chaque mois. Merci à toute l'équipe !</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SL</div>
+                    <div class="testimonial-info">
+                        <h4>Sandrine Lefort</h4>
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section class="planity" id="reservation">
-        <h2>Réservez Votre Rendez-vous</h2>
-        <p>Choisissez votre créneau en quelques clics et vivez l'expérience L'Instant Lumière</p>
+<section class="gallery">
+    <h2>Nos Créations</h2>
+    <p class="subtitle">Un aperçu de notre savoir-faire artisanal</p>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Carré Parisien Moderne</h3>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Balayage Caramel</h3>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Coupe Courte Audacieuse</h3>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Ondulations Naturelles</h3>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Tresse Bohème Chic</h3>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Couleur Cuivrée</h3>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Chignon Mariée</h3>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-caption">
+                <h3>Brushing Glamour</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-info">
+            <h2>Contactez-Nous</h2>
+            <div class="contact-item">
+                <div class="contact-item-icon">📍</div>
+                <div>
+                    <h3>Adresse</h3>
+                    <p>23 Rue Carnot<br>21200 Beaune, France<br><em>À deux pas de la place Carnot</em></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">📞</div>
+                <div>
+                    <h3>Téléphone</h3>
+                    <p>03 80 26 48 92<br><em>Réponse sous 2h en semaine</em></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">⏰</div>
+                <div>
+                    <h3>Horaires d'Ouverture</h3>
+                    <p>Mardi - Vendredi : 9h00 - 19h00<br>Samedi : 8h30 - 18h00<br>Dimanche - Lundi : Fermé</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">✉️</div>
+                <div>
+                    <h3>Email</h3>
+                    <p>contact@instantlumiere-beaune.fr</p>
+                </div>
+            </div>
+        </div>
         <div class="planity-container">
+            <h3>Réservez en ligne</h3>
             <iframe 
                 class="planity-iframe"
                 src="https://www.planity.com/widget-rdv"
@@ -1228,239 +1378,40 @@
                 Pour l'activer, créez votre compte professionnel sur <a href="https://www.planity.com" target="_blank">planity.com</a> et intégrez votre widget personnalisé.
             </p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="why-us">
-        <div class="container">
-            <h2>Pourquoi Nous Choisir ?</h2>
-            <p class="intro">Nous vous proposons des coupes parfaitement maîtrisées, modernes et qui vous ressemblent. Mais au-delà de la technique, c'est toute une expérience que nous créons pour vous.</p>
-            <div class="why-us-grid">
-                <div class="why-us-card">
-                    <div class="why-us-icon">🤗</div>
-                    <h3>Accueil Chaleureux</h3>
-                    <p>Dès que vous franchissez notre porte, vous entrez dans un univers où vous êtes unique. Café, thé, sourires sincères : nous prenons le temps de vous écouter et de comprendre vos envies avant même de toucher vos cheveux.</p>
-                </div>
-                <div class="why-us-card">
-                    <div class="why-us-icon">🎓</div>
-                    <h3>Équipe Qualifiée</h3>
-                    <p>Nos huit coiffeurs cumulent plus de 70 ans d'expérience. Formés aux dernières techniques parisiennes et internationales, en formation continue permanente, ils maîtrisent tous les types de cheveux et toutes les textures.</p>
-                </div>
-                <div class="why-us-card">
-                    <div class="why-us-icon">💡</div>
-                    <h3>Conseils Avisés</h3>
-                    <p>Nous ne suivons pas aveuglément les tendances. Nous analysons votre visage, votre style de vie, l'entretien que vous pouvez y consacrer. Le résultat ? Une coupe qui vous va vraiment, que vous saurez reproduire chez vous.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+    <p>&copy; 2025 L'Instant Lumière - Salon de Coiffure d'Exception à Beaune | Tous droits réservés | Produits 100% Végans & Naturels</p>
+</footer>
 
-    <section class="testimonials" id="avis">
-        <h2>Ils Nous Font Confiance</h2>
-        <p class="subtitle">Plus de 3000 clients satisfaits en 10 ans d'existence</p>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">J'ai enfin trouvé LE salon qui comprend mes cheveux bouclés ! Sophie a transformé ma masse informe en boucles définies et magnifiques. Je ne me suis jamais sentie aussi belle. Et en plus, tout est naturel !</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">CM</div>
-                        <div class="testimonial-info">
-                            <h4>Camille Moreau</h4>
-                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">Après 15 ans à chercher le bon coiffeur, je peux dire que c'est ici. L'ambiance est exceptionnelle, l'équipe à l'écoute, et le résultat toujours impeccable. Mon balayage a 4 mois et il est toujours parfait !</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">AD</div>
-                        <div class="testimonial-info">
-                            <h4>Amélie Dubois</h4>
-                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">Pour mon mariage, Julie a créé une coiffure de rêve qui a tenu toute la journée et toute la soirée. Élégante, romantique, exactement ce que je voulais. Tous mes invités m'ont demandé l'adresse du salon !</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">LC</div>
-                        <div class="testimonial-info">
-                            <h4>Laura Chevalier</h4>
-                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">En tant qu'homme, j'étais sceptique sur les salons "haut de gamme". Quelle erreur ! Vincent m'a fait une coupe moderne qui change tout. Je reçois des compliments tous les jours. Le rapport qualité-prix est imbattable.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">TB</div>
-                        <div class="testimonial-info">
-                            <h4>Thomas Bernard</h4>
-                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">Mes cheveux étaient complètement abîmés par des colorations chimiques. En 6 mois avec leurs soins naturels et leur accompagnement, j'ai retrouvé des cheveux sains et brillants. Je ne peux plus m'en passer !</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MR</div>
-                        <div class="testimonial-info">
-                            <h4>Marie Roussel</h4>
-                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">L'accueil est toujours chaleureux, l'ambiance détendue mais professionnelle. C'est devenu mon moment à moi, un rendez-vous que j'attends avec impatience chaque mois. Merci à toute l'équipe !</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">SL</div>
-                        <div class="testimonial-info">
-                            <h4>Sandrine Lefort</h4>
-                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
 
-    <section class="gallery">
-        <h2>Nos Créations</h2>
-        <p class="subtitle">Un aperçu de notre savoir-faire artisanal</p>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Carré Parisien Moderne</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Balayage Caramel</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Coupe Courte Audacieuse</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Ondulations Naturelles</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Tresse Bohème Chic</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Couleur Cuivrée</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Chignon Mariée</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption">
-                    <h3>Brushing Glamour</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+    mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-info">
-                <h2>Contactez-Nous</h2>
-                <div class="contact-item">
-                    <div class="contact-item-icon">📍</div>
-                    <div>
-                        <h3>Adresse</h3>
-                        <p>23 Rue Carnot<br>21200 Beaune, France<br><em>À deux pas de la place Carnot</em></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">📞</div>
-                    <div>
-                        <h3>Téléphone</h3>
-                        <p>03 80 26 48 92<br><em>Réponse sous 2h en semaine</em></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">⏰</div>
-                    <div>
-                        <h3>Horaires d'Ouverture</h3>
-                        <p>Mardi - Vendredi : 9h00 - 19h00<br>Samedi : 8h30 - 18h00<br>Dimanche - Lundi : Fermé</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">✉️</div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>contact@instantlumiere-beaune.fr</p>
-                    </div>
-                </div>
-            </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="nom">Nom complet *</label>
-                    <input type="text" id="nom" placeholder="Votre nom" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" placeholder="votre@email.fr" required>
-                </div>
-                <div class="form-group">
-                    <label for="telephone">Téléphone *</label>
-                    <input type="tel" id="telephone" placeholder="06 12 34 56 78" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Décrivez votre projet capillaire *</label>
-                    <textarea id="message" placeholder="Coupe, coloration, soin... Racontez-nous ce dont vous rêvez !" required></textarea>
-                </div>
-                <button type="submit" class="submit-button">Envoyer ma demande</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 L'Instant Lumière - Salon de Coiffure d'Exception à Beaune | Tous droits réservés | Produits 100% Végans & Naturels</p>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+    document.querySelectorAll('#navMenu a').forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.textContent = '☰';
         });
+    });
 
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            alert('🌟 Merci pour votre demande ! Notre équipe vous recontactera dans les 2 heures pour confirmer votre rendez-vous et discuter de votre projet capillaire. À très bientôt chez L\'Instant Lumière !');
-            this.reset();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
-    </script>
+    });
+</script>
+```
+
 </body>
 </html>
